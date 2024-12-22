@@ -8,7 +8,7 @@ resource "aws_route53_record" "expense" {
   ttl     = 1
   # count and count.index will not work in locals
   #records = records_value
-  records = startswith(each.key, "frontend") ? [each.value.public_ip] :  [each.value.private_ip]
+  records = startswith(each.key, "frontend") ? [each.value.public_ip] : [each.value.private_ip]
   # if records already exists
   allow_overwrite = true
 }

@@ -13,9 +13,9 @@ data "aws_ami" "ami_info" {
         values = ["ebs"]
     }
 
-    #filter {
-    #    name = "Virtualization type"
-    #    values = ["hvm"]
-    #}
+    filter {
+       name = "virtualization-type"
+       values = ["hvm"]
+    }
       
 }
